@@ -3,7 +3,7 @@ Put a webcam in front of your utility meter and AWS Rekognition sends the readin
 
 note: if you restart the addon you will need to update the baseline value.
 
-##Config
+## Config
 upd_interval: value in seconds to be used as interval between data refreshes.
 
 url: where to find the picture of your meter (webcam) - it will be stored temporarily in folder /config/www
