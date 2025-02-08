@@ -1,7 +1,5 @@
 # solius_reader
-Put a webcam in front of your utility meter and AWS Rekognition sends the reading over MQTT to a MQTT server of your choice.
-
-note: if you restart the addon you will need to update the baseline value.
+Put a webcam in front of your Solius controller and let AWS push the readings over mqtt
 
 ## Config
 upd_interval: value in seconds to be used as interval between data refreshes.
@@ -12,11 +10,9 @@ user: basic authentication for cam
 
 password: password to obtain webcam picture
 
-baseline: current reading of your meter
+id1: id of the T1 text extraction
 
-under: max you expect it to go down during an update interval (where I live solar panels allow meters to run backwards)
-
-over: max you expect it to go up during an update interval
+id2: id of the T2 text extraction
 
 aws_access_key_id, aws_secret_access_key, region: see link on how to set up an AWS account. Did not really see how to get your region, I use "us-east-2" (https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html)
 
