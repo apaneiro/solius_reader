@@ -1,4 +1,4 @@
-# solius_reader
+# Solius Reader
 Put a webcam in front of your Solius controller and let AWS push the readings over mqtt
 
 ## Config
