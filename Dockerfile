@@ -25,7 +25,7 @@ RUN pip3 install requests
 RUN pip3 install paho-mqtt
 
 # Copy data for add-on
-COPY ocr_aws.py /
+COPY solius_aws.py /
 COPY run.sh /
 
 RUN chmod a+x /run.sh
