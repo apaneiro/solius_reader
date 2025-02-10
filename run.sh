@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
 
-python3 ocr_aws.py
+python3 solius_aws.py
 
 
