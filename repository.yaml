@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: apaneiro's Home Assistant add-on repository
-url: 'https://github.com/apaneiro/solius_reader'
+name: apaneiro Home Assistant add-on repository
+url: https://github.com/apaneiro/solius_reader
 maintainer: apaneiro <apaneiro@gmail.com>
