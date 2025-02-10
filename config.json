@@ -4,7 +4,7 @@
 	"slug": "soliusreader",
 	"homeassistant_api": "no",
 	"hassio_api": true,
-	"description": "Put a webcam in front of your Solius controller and let AWS push the readings over mqtt",
+	"description": "Get temperatures from your Solius controller and let AWS push the readings over mqtt",
 	"url": "https://github.com/apaneiro/solius_reader",
 	"startup": "application",
 	"boot": "auto",
