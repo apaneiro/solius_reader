@@ -127,7 +127,7 @@ def main():
     value += '"uniq_id":"' + config_json["mqtt_topic"] + '_T1","dev":{"ids":"' + id + '",'
     value += '"name":"' + config_json["mqtt_topic"] + '","sw":"solius","mdl":"Meter","mf":"Solius",'
     value += '"cns":[["mac","' + id + '"]]}}'
-    mqttc.publish(topic, value)
+    mqttc.publish(topic, value, retain=True)
 
     topic = "homeassistant/sensor/" + config_json["mqtt_topic"] + "/T2/config"
     value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":1920,"stat_cla":"measurement",'
@@ -135,7 +135,7 @@ def main():
     value += '"uniq_id":"' + config_json["mqtt_topic"] + '_T2","dev":{"ids":"' + id + '",'
     value += '"name":"' + config_json["mqtt_topic"] + '","sw":"solius","mdl":"Meter","mf":"Solius",'
     value += '"cns":[["mac","' + id + '"]]}}'
-    mqttc.publish(topic, value)
+    mqttc.publish(topic, value, retain=True)
 
     topic = "homeassistant/sensor/" + config_json["mqtt_topic"] + "/T3/config"
     value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":1920,"stat_cla":"measurement",'
@@ -143,7 +143,7 @@ def main():
     value += '"uniq_id":"' + config_json["mqtt_topic"] + '_T3","dev":{"ids":"' + id + '",'
     value += '"name":"' + config_json["mqtt_topic"] + '","sw":"solius","mdl":"Meter","mf":"Solius",'
     value += '"cns":[["mac","' + id + '"]]}}'
-    mqttc.publish(topic, value)
+    mqttc.publish(topic, value, retain=True)
 
     mqttc.disconnect()
 
