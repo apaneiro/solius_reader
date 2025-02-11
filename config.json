@@ -1,6 +1,6 @@
 {
 	"name": "Solius Reader",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"slug": "soliusreader",
 	"homeassistant_api": "no",
 	"hassio_api": true,
