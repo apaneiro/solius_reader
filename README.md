@@ -1,21 +1,24 @@
 # Solius Reader
-Get temperatures from your Solius controller and let AWS push the readings over mqtt
+Get temperatures from your Solius controller with a cam
 
 Based on: https://github.com/jhhbe/hassio-addons/tree/master/meter_reader
 
 ## Config
-upd_interval: value in seconds to be used as interval between data refreshes.
+upd_interval: interval between data refreshes in seconds
 
-url: where to find the picture of your meter (webcam)
+url: cam still image url 
 
-user: basic authentication for cam
+user: cam basic authentication
 
-password: basic authentication for cam
+password: cam basic authentication
 
-aws_access_key_id, aws_secret_access_key, region: see link on how to set up an AWS account. Did not really see how to get your region, I use "us-east-2" (https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html)
+aws_access_key_id, aws_secret_access_key
+Link on how to set up an AWS account: https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html)
 
-mqtt_host, mqtt_port, mqtt_user, mqtt_pwd: find and get access to your MQTT server
+region: Don't know your AWS region? Use "us-east-2"
 
-mqtt_topic: topic on which meter reading gets published
+mqtt_host, mqtt_port, mqtt_user, mqtt_pwd: MQTT server and credentials
+
+mqtt_topic: topic to publish (device id)
 
 verbose: show internal messages
