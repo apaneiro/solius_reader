@@ -1,10 +1,10 @@
 {
 	"name": "Solius Reader",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"slug": "soliusreader",
 	"homeassistant_api": "no",
 	"hassio_api": true,
-	"description": "Get temperatures from your Solius controller and let AWS push the readings over mqtt",
+	"description": "Get temperatures from your Solius controller with a cam",
 	"url": "https://github.com/apaneiro/solius_reader",
 	"startup": "application",
 	"boot": "auto",
