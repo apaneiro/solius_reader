@@ -66,7 +66,7 @@ def processImage():
 
                 if dot == -1:
                     if verbose:
-                        print("Text with no dot, discard)
+                        print("Text with no dot, discard")
                     continue
 
                 if verbose:
