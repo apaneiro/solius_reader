@@ -62,6 +62,12 @@ def processImage():
 
             if t == "T1" or t == "T2" or t == "T3":
                 text = text[2:].lstrip()
+                dot = text.find(".")
+
+                if dot == -1:
+                    if verbose:
+                        print("Text with no dot, discard)
+                    continue
 
                 if verbose:
                     print("Trying conversion to float of: ", text)
@@ -105,7 +111,7 @@ def publishMQTT(sensor, value):
     mqttc = connectMQTT()
 
     topic = config_json["mqtt_topic"] + "/sensor/" + sensor + "/state"
-    mqttc.publish(topic, value)
+    mqttc.publish(topic, value, retain=True)
     mqttc.disconnect()
     if verbose:
         print("MQTT Published: ", value)
