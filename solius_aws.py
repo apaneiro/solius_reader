@@ -35,6 +35,7 @@ awsclient = boto3.client('rekognition')
 imagefile = "/root/meter.jpg"
 
 verbose = config_json["verbose"]  > 0
+upd_interval = config_json["upd_interval"]
 
 def processImage():
     # get image in binary format
@@ -122,7 +123,7 @@ def main():
     mqttc = connectMQTT()
     id = '3d6105d309b9'
     topic = "homeassistant/sensor/" + config_json["mqtt_topic"] + "/T1/config"
-    value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":1920,"stat_cla":"measurement",'
+    value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":' + upd_interval * 3 + ',"stat_cla":"measurement",'
     value += '"name":"T1","stat_t":"' + config_json["mqtt_topic"] + '/sensor/T1/state",'
     value += '"uniq_id":"' + config_json["mqtt_topic"] + '_T1","dev":{"ids":"' + id + '",'
     value += '"name":"' + config_json["mqtt_topic"] + '","sw":"solius","mdl":"Meter","mf":"Solius",'
@@ -130,7 +131,7 @@ def main():
     mqttc.publish(topic, value, retain=True)
 
     topic = "homeassistant/sensor/" + config_json["mqtt_topic"] + "/T2/config"
-    value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":1920,"stat_cla":"measurement",'
+    value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":' + upd_interval * 3 + ',"stat_cla":"measurement",'
     value += '"name":"T2","stat_t":"' + config_json["mqtt_topic"] + '/sensor/T2/state",'
     value += '"uniq_id":"' + config_json["mqtt_topic"] + '_T2","dev":{"ids":"' + id + '",'
     value += '"name":"' + config_json["mqtt_topic"] + '","sw":"solius","mdl":"Meter","mf":"Solius",'
@@ -138,7 +139,7 @@ def main():
     mqttc.publish(topic, value, retain=True)
 
     topic = "homeassistant/sensor/" + config_json["mqtt_topic"] + "/T3/config"
-    value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":1920,"stat_cla":"measurement",'
+    value = '{"dev_cla":"temperature","unit_of_meas":"°C","exp_aft":' + upd_interval * 3 + ',"stat_cla":"measurement",'
     value += '"name":"T3","stat_t":"' + config_json["mqtt_topic"] + '/sensor/T3/state",'
     value += '"uniq_id":"' + config_json["mqtt_topic"] + '_T3","dev":{"ids":"' + id + '",'
     value += '"name":"' + config_json["mqtt_topic"] + '","sw":"solius","mdl":"Meter","mf":"Solius",'
@@ -151,7 +152,7 @@ def main():
         thread = threading.Thread(target=processImage)
         thread.start()
         #thread.join()
-        time.sleep(config_json["upd_interval"])
+        time.sleep(upd_interval)
 
 if __name__ == '__main__':
     main()
