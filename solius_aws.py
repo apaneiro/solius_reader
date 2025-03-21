@@ -36,7 +36,7 @@ imagefile = "/root/meter.jpg"
 
 verbose = config_json["verbose"]  > 0
 upd_interval = config_json["upd_interval"]
-exp_aft = upd_interval * 3
+exp_aft = str(upd_interval * 3)
 
 def processImage():
     # get image in binary format
